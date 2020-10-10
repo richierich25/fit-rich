@@ -1,0 +1,54 @@
+<section class="signup-form">
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" (ngSubmit)="onSubmitTD()" #form="ngForm">
+    <mat-form-field hintLabel="Required field" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput placeholder="pat@example.com" [ngModel]="'test@gmail.com'" name="email" required email #email="ngModel">
+      <mat-error *ngIf="!email.valid">{{getEmailErrorMessageTD()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput placeholder="pa$$word2" [ngModel]="'richard'" name="password" required minlength="6" autocomplete="off" #password="ngModel">
+      <mat-hint align="start">{{'Use atleast 6 characters'}}</mat-hint>
+      <mat-hint align="end">{{password.value?.length}}/ 6</mat-hint>
+      <mat-error *ngIf="password.hasError('required')">{{'You must enter a value'}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Your birthdate</mat-label>
+      <input matInput [matDatepicker]="picker" [max]="maxDate" ngModel name="birthday" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-checkbox ngModel name="agree" required>Agree to terms and Conditions!</mat-checkbox>
+
+    <button type="submit" mat-raised-button color="primary" [disabled]="!form.valid" *ngIf="!isLoading">Submit</button>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+  </form>
+
+  <!-- <form [formGroup]="signupForm" fxLayout="column" fxLayoutAlign="center center">
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput placeholder="pat@example.com" [formControlName]="'email'" required>
+      <mat-error *ngIf="!signupForm.get('email').valid">{{getEmailErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput placeholder="pa$$word2" [formControlName]="'password'" required>
+      <mat-error *ngIf="!signupForm.get('password').valid">{{getPasswordErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary">Submit</button>
+  </form> -->
+
+</section>
+
+
+
+
+
+
+
+
+
+
