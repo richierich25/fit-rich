@@ -26,7 +26,7 @@
       <a href="https://github.com/richierich25/fit-rich/stargazers">
       <img src="https://img.shields.io/github/stars/richierich25/fit-rich" alt="GitHub Stars">
     </a>
-    <img src="https://github.com/richierich25/fit-rich/workflows/Run%20Weather%20Bot/badge.svg" alt="Run Wow Resume">
+    <img src="https://github.com/richierich25/fit-rich/workflows/build/badge.svg" alt="Run Wow Resume">
   </p>
 
   <p align="center">
